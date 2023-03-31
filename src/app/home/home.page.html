@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Raytsapp </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Raytsapp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="ion-padding">
+    <ion-text>
+      <h5>¿Con quién querés chatear?</h5>
+    </ion-text>
+    <form
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+      id="form"
+      class="ion-padding-vertical"
+    >
+      <ion-input
+        label="Teléfono *"
+        labelPlacement="floating"
+        type="tel"
+        name="tel"
+        required
+        pattern="^\+?[1-9]\d{6,15}$"
+        inputmode="tel"
+        fill="outline"
+        helperText="Ingresá el código de área (sin 0) junto con el teléfono (sin 15)"
+        errorText="Teléfono inválido"
+        class="ion-margin-bottom"
+        [(ngModel)]="phone"
+      ></ion-input>
+
+      <ion-textarea
+        name="message"
+        label="Mensaje"
+        labelPlacement="floating"
+        fill="outline"
+        [autoGrow]="true"
+        class="ion-margin-bottom"
+        rows="3"
+        [(ngModel)]="message"
+      ></ion-textarea>
+    </form>
+  </div>
+  <div class="button-wrapper ion-padding">
+    <ion-button expand="block" fill="solid" form="form" type="submit">
+      <ion-icon slot="start" src="/assets/icon/whatsapp_white.svg"></ion-icon>
+      <b>Chatear en WhatsApp</b>
+    </ion-button>
+  </div>
+</ion-content>

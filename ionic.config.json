@@ -1,0 +1,7 @@
+{
+  "name": "raytsapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
